@@ -2,8 +2,8 @@ if (process.env.NODE_ENV !== "production") {//this is used to access .env file w
     require('dotenv').config();
 }
 
-//console.log(process.env.HOSTNAME)
 
+const port = process.env.PORT || 5000
 const express = require('express');
 const app = express();
 const path = require('path')
@@ -66,6 +66,6 @@ app.use((err, req, res, next) => {
     res.status(status).send(message)
 })
 
-app.listen(5000, () => {
-    console.log('listening on port 5000 for www.jlcrasta.com')
+app.listen(port, () => {
+    console.log(`listening on port ${port} for www.jlcrasta.com`)
 })
