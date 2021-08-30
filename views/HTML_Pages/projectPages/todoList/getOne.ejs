@@ -1,0 +1,59 @@
+<%- include ('../../../Basic_content/htmlhead') %>
+    <%- include ('../../../Basic_content/htmlBody') %>
+
+        <div class="projectPage">
+            <%- include ('../../../Basic_content/projectBar') %>
+                <div class="projectContent">
+                    <h2 class="todoListHeading">Log In To Create ToDoList</h2>
+
+                    <% if(success && success.length){ %>
+                        <div class="alert_success">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            <p>
+                                <%= success %>
+                            </p>
+                        </div>
+                        <% }%>
+                            <% if(error && error.length){ %>
+                                <div class="alert_error">
+                                    <span class="closebtn"
+                                        onclick="this.parentElement.style.display='none';">&times;</span>
+                                    <p>
+                                        <%= error %>
+                                    </p>
+                                </div>
+                                <% } %>
+
+                                    <div>
+                                        <form action="/project/todoList/getOne" method="POST">
+                                            <div class="signUpform">
+                                                <div>
+                                                    <label for="name">Enter Username:</label>
+                                                    <input type="text" id="name" placeholder="Username" name="username">
+                                                </div>
+
+                                                <div>
+                                                    <label for="pass">Enter Password:</label>
+                                                    <input type="password" id="pass"
+                                                        name="password">
+                                                </div>
+
+                                                <div class="signUpBtn"> <button>Log In</button></div>
+                                                <div><a href="/project/todoList/forgotPassword">Forget Password</a>
+                                                </div>
+                                                <div><a href="/project/todoList/deleteAccount">Delete ToDo-List
+                                                        Account</a>
+                                                </div>
+                                                <div> <a href="/project/todoList">GoBack</a></div>
+                                            </div>
+
+
+                                        </form>
+
+                                    </div>
+                </div>
+        </div>
+
+
+
+        <%- include ('../../../Basic_content/htmlTail') %>

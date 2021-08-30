@@ -1,0 +1,50 @@
+/* The alert message box */
+.alert_error {
+  text-align: center;
+  line-height: 1.5;
+    padding: 20px;
+    background-color: #f5766d; 
+    color: white;
+    position: absolute;
+    left: 40%;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    min-width: 20%;
+  }
+
+  .alert_success {
+    text-align: center;
+    line-height: 1.5;
+    padding: 20px;
+    background-color: #60f360; 
+    color: white;
+    position: absolute;
+    left: 40%;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    width: 20%;
+  }
+  
+  /* The close button */
+  .closebtn {
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }
+
+
+  /*error page css*/
+  .pnf>h2{
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgb(82, 1, 1);
+    padding: 1em 1em;
+}

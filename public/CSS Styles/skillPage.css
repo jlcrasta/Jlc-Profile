@@ -1,0 +1,50 @@
+
+.skillBody{
+    letter-spacing: 1.5px;
+    line-height: 2;
+}
+.skillsHeader{
+    font-size: 3rem;
+    text-align: center;
+    padding: 0.5em 1em;
+}
+.skillContent{
+    padding: 1em 2em;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+@media(max-width:660px){
+    .skillContent{
+        display: block;
+    }
+}
+.skillSubHeader{
+font-size: 3rem;
+font-weight: 600;
+padding: 0.5em 0.5em;
+}
+.skillTable>table>tbody>tr td{
+    border: 1px solid rgb(224, 167, 230);
+    border-collapse: collapse;
+    padding: 1em 1em;
+}
+.span1,.span2,.span3{
+    padding: 0.5em 0.5em;
+}
+.span1>span,.span2>span,.span3>span{
+    border-radius: 10px;
+    padding: 0.1em 0.1em;
+    
+}
+.span1>span{
+    background-color: rgb(248, 188, 191);
+}
+.span2>span{
+    background-color: rgb(248, 244, 188);
+}
+.span3>span{
+    background-color: rgb(188, 219, 248);
+}

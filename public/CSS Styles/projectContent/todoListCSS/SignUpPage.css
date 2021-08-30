@@ -1,0 +1,19 @@
+
+.todoListHeading{
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding: 1em 1em;
+}
+
+.signUpform{
+line-height: 2;
+}
+.signUpBtn>button{
+    padding: 0.1em 0.2em;
+    margin-top: 1em;
+    font-size: 2rem;
+}
+.signUpBtn>button:hover{
+    transition: 700ms;
+    background-color: rgb(50, 243, 50);
+}

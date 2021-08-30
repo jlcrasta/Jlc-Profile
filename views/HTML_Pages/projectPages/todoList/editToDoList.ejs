@@ -1,0 +1,34 @@
+<%- include ('../../../Basic_content/htmlhead') %>
+    <%- include ('../../../Basic_content/htmlBody') %>
+
+    <div class="projectPage">
+        <%- include ('../../../Basic_content/projectBar') %>
+        <div class="projectContent">
+            <h2>Edit Agenda for <%= username %>
+            </h2>
+
+            <div class="addtodoListContent">
+                <form action="/project/todoList/editToDoList/<%= id %>?_method=PATCH" method="post">
+                    <div>
+                        <label for="agenda">Edit your Agenda here</label>
+                    </div>
+                    <div>
+                        <textarea name="editedList" id="agenda" cols="30" rows="10"><%= list %></textarea>
+
+                    </div>
+                    <button class="addListBtn">Update List</button>
+                </form>
+
+                <form action="/project/todoList/logout" method="post" class="editLogoutBtn">
+                    <button class="addListBtn Logout">Logout</button>
+                </form>
+
+                <a class="editList" href="/project/todoList/allTodoList">Go Back</a>
+
+            </div>
+
+
+        </div>
+
+       </div>
+            <%- include ('../../../Basic_content/htmlTail') %>

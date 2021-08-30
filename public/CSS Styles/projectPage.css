@@ -1,0 +1,58 @@
+
+.defaultProjectContent{
+    font-weight: 800;
+    margin-top: 2em;
+   
+}
+
+.projectContent{
+    font-size: 2rem;
+    border-radius: 20px;
+    background-color: dodgerblue;
+    width: 60%;
+    min-height: 70vmin;
+    padding: 1em 1em;
+  text-align: center;
+  margin:0 auto;
+  box-shadow: 5px 5px 5px rgba(37, 37, 243, 0.76);
+}
+
+.projectBar{
+    border-radius: 20px;
+    font-size: 2rem;
+    padding: 1em 1em;
+    background-color: rgb(44, 147, 250);
+    max-width: 15%;
+    height: 30vmin;
+    align-items: center;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(49, 205, 253);
+    position: sticky;
+    top:6.5em;
+}
+.projectPage{
+    padding: 2em 2em;
+    display: flex;
+    margin:2em auto;
+    justify-content: space-around;
+}
+
+@media (max-width:890px) {
+    .projectPage{
+        flex-direction: column-reverse;
+       
+    }
+    .projectContent{
+        width:80%
+    }
+    .projectBar{
+        max-width: 70%;
+        margin:1em auto;
+        height:auto;
+    }
+}
+
+input ,select{
+font-size: 1.5rem;
+}

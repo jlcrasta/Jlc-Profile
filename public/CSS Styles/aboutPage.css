@@ -1,0 +1,13 @@
+
+.aboutSection{
+    padding: 1em 1em;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+.aboutSectionHeading{
+    color: red;
+    font-size: 3rem;
+    padding: 0.1em 0.1em;
+}

@@ -1,0 +1,35 @@
+<%- include ('../../../Basic_content/htmlhead') %>
+    <%- include ('../../../Basic_content/htmlBody') %>
+
+        <div class="projectPage">
+            <%- include ('../../../Basic_content/projectBar') %>
+            
+                <div class="projectContent">
+                    <h2 class="todoListHeading">Add New Agenda for <%= username %>
+                    </h2>
+                    <div class="addtodoListContent">
+                        <form action="/project/todoList/addList" method="POST">
+                            <div>
+                                <label for="agenda" style="font-weight: bold;">Enter your Agenda here</label>
+                            </div>
+                            <div>
+                                <textarea name="agenda" id="agenda" cols="20" rows="10"></textarea>
+                            </div>
+                            <div>
+                                <button class="addListBtn">Add To List</button>
+
+                            </div>
+                        </form>
+
+
+                        <form action="/project/todoList/logout" method="post">
+                            <button class="addListBtn Logout">Logout</button>
+                        </form>
+
+                        <div><a href="/project/todoList/allTodoList">Go Back</a></div>
+
+                    </div>
+                </div>
+
+        </div>>
+        <%- include ('../../../Basic_content/htmlTail') %>

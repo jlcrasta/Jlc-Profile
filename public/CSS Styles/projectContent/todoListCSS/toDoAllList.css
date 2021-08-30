@@ -1,0 +1,69 @@
+
+.listArea{
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+    
+}
+.listDisplay{
+    display: flex;
+    border: 1px solid red;
+    border-radius: 20px;
+    padding: 1em 1em;
+    background-color: rgba(98, 98, 255, 0.829);
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+}
+.listEntries{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.listEntries>li{
+    text-align: left;
+}
+.listBtns{
+    display: flex;
+}
+
+.listEntries button{
+    width: 5em;
+    padding: 0.3em 0.5em;
+    border-radius: 20px;
+    margin-left: 1em;
+    font-weight: bold;
+    }
+
+.listBtn{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.btnAdd ,.btnLogOut{
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 5em;
+    border-radius: 20px;
+    padding: 0.5em 0.1em;
+    margin:2em 1em;
+}
+.btnAdd:hover{
+    transition: 600ms;
+background-color: rgb(50, 243, 50);
+color: white;
+}
+.btnLogOut:hover{
+    transition: 600ms;
+    color: white;
+background-color: rgb(243, 50, 50);
+}
+.listBtns>a>button:hover{
+    transition: 600ms;
+background-color: rgb(244, 248, 4);
+}
+.listBtns>form>button:hover{
+    transition: 600ms;
+background-color: rgb(243, 50, 50);
+}

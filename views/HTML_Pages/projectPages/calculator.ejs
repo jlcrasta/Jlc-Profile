@@ -1,0 +1,52 @@
+<%- include ('../../Basic_content/htmlhead') %>
+    <%- include ('../../Basic_content/htmlBody') %>
+
+<div class="projectPage">
+    <%- include ('../../Basic_content/projectBar') %>
+    
+        <div class="projectContent">
+            <h2 class="calculatorHeading">Simple Calculator</h2>
+            <div class="calcBody">
+                
+                <form id="calForm">
+                    <div class="firstNum">
+                        <label for="1stNum">Enter Number:</label>
+                        <input type="Number" id="1stNum" required placeholder="Enter Number" step="0.0001">
+                    </div>
+
+                    <div class="secondNum">
+                        <label for="2ndNum">Enter Number:</label>
+                        <input type="Number" id="2ndNum" required placeholder="Enter Number" step="0.0001">
+                    </div>
+
+                    <div class="operation">
+                        <label for="oper">Enter Operation:</label>
+                        <select name="operations" id="oper">
+                            <option value="add">Addition</option>
+                            <option value="sub">Subtraction</option>
+                            <option value="multi">Multiplication</option>
+                            <option value="divi">Division</option>
+                            <option value="modu">Modulas</option>
+                        </select>
+                    </div>
+
+                    <button>
+                        Calculate
+                    </button>
+
+
+
+                </form>
+                <div class="secondNum">
+                    <label for="ans">The Answer is:</label>
+                    <input type="Number" step="0.0001" disabled id="answer">
+                </div>
+
+            </div>
+
+        </div>
+        <script src="../../../Js_Script/calculator.js"></script>
+    </div>
+        <!-- <script src="Js_Script/Calculator.js"></script>-->
+        
+            <%- include ('../../Basic_content/htmlTail') %>

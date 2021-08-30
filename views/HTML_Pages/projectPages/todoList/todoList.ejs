@@ -1,0 +1,36 @@
+<%- include ('../../../Basic_content/htmlhead') %>
+    <%- include ('../../../Basic_content/htmlBody') %>
+        <div class="projectPage">
+            <%- include ('../../../Basic_content/projectBar') %>
+            <div class="projectContent">
+                <div class="todoHeader">
+                    <h2>To-Do List</h2>
+                </div>
+
+                <% if(success && success.length){ %>
+                    <div class="alert_success">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        <p>
+                            <%= success %>
+                        </p>
+                    </div>
+                    <% } %>
+                        <% if(error && error.length){ %>
+                            <div class="alert_error">
+                                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                <p>
+                                    <%= error %>
+                                </p>
+                            </div>
+                            <% } %>
+                                <div class="userAccount">
+                                    <form action="/project/todoList/createOne" method="get"><button>Create
+                                            One</button></form>
+                                    <form action="/project/todolist/getOne" method="get"><button>Check One</button>
+                                    </form>
+                                </div>
+            </div>
+        </div>
+
+        
+            <%- include ('../../../Basic_content/htmlTail') %>

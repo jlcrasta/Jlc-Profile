@@ -1,0 +1,59 @@
+<%- include ('../../../Basic_content/htmlhead') %>
+    <%- include ('../../../Basic_content/htmlBody') %>
+
+        <div class="projectPage">
+            <%- include ('../../../Basic_content/projectBar') %>
+
+                <div class="projectContent">
+                    <h2 class="todoListHeading">
+                        To-Do List of <%= username %>
+                    </h2>
+                    <% if(success && success.length){ %>
+                        <div class="alert_success">
+                            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            <p>
+                                <%= success %>
+                            </p>
+                        </div>
+                        </p>
+                        <% } %>
+                            <div class="listArea">
+                                <div class="listDisplay">
+
+                                    <% if(lists==null){}else{for(list of lists){ %>
+                                        <ol class="listEntries">
+                                            <li>
+                                                <%=list.list %>
+                                            </li>
+                                            <div class="listBtns">
+                                                <a href="/project/todoList/editToDoList/<%= list._id %> ">
+                                                    <button>Edit</button> </a>
+                                                <form
+                                                    action="/project/todoList/deleteToDoList/<%= list._id %>?_method=DELETE"
+                                                    method="post">
+                                                    <button>Remove</button>
+                                                </form>
+                                            </div>
+                                        </ol>
+                                        <% } }%>
+                                </div>
+
+                                <div class="listBtn">
+                                    <form action="/project/todoList/addList" method="get">
+                                        <button class="btnAdd">Add</button>
+                                    </form>
+
+                                    <form action="/project/todoList/logout" method="post">
+                                        <button class="btnLogOut">Logout</button>
+                                    </form>
+                                </div>
+                                <a href="/project/todoList/getOne">Go Back</a>
+
+                            </div>
+
+                </div>
+        </div>
+
+
+
+        <%- include ('../../../Basic_content/htmlTail') %>

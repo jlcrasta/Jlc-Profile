@@ -1,0 +1,36 @@
+<%- include ('../../../Basic_content/htmlhead') %>
+    <%- include ('../../../Basic_content/htmlBody') %>
+
+
+        <div class="projectPage">
+            <%- include ('../../../Basic_content/projectBar') %>
+                <div class="projectContent">
+                    <h2 class="todoListHeading">Delete Your ToDoList Account</h2>
+
+                    <div>
+                        <form action="/project/todoList/deleteAccount?_method=delete" method="POST">
+                            <div class="signUpform">
+                                <div>
+                                    <label for="name">Enter Username:</label>
+                                    <input type="text" id="name" placeholder="Username" name="username" required>
+                                </div>
+
+                                <div>
+                                    <label for="pass">Enter Password:</label>
+                                    <input type="password" id="pass" placeholder="Password" name="password" required>
+                                </div>
+
+                                <div class="signUpBtn"> <button class="accountDeleteBtn"
+                                        onclick="alert('Your are about to Delete your Account')">Delete
+                                        Account</button></div>
+
+                                <div> <a href="/project/todoList/getOne">GoBack</a></div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+        </div>
+        <%- include ('../../../Basic_content/htmlTail') %>

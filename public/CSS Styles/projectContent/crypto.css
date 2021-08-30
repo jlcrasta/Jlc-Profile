@@ -1,0 +1,10 @@
+.tableHeader{
+    font-weight: 600;
+}
+.cryptoTable,.tableBorder{
+    border: 1px solid black;
+    padding: 0.5em 0.7em;
+}
+.cryptoTable{
+    margin-top: 1em;
+}
