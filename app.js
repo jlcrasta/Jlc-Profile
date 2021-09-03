@@ -15,7 +15,8 @@ const mongoSanitize = require('express-mongo-sanitize')//this is used to get sec
 const helmet = require('helmet')//here another layer is added for security
 app.use(helmet());
 
-const scriptSrcUrls = [//
+const scriptSrcUrls = [
+    'https://smtpjs.com/v3/smtp.js',
     'https://api.cryptonator.com/api/ticker/eth-usd',
     'https://api.cryptonator.com/api/ticker/btc-usd',
     'https://api.cryptonator.com/api/ticker/bnb-usd',
@@ -26,6 +27,7 @@ const styleSrcUrls = [
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
 ];
 const connectSrcUrls = [
+    'https://smtpjs.com',
     'https://api.cryptonator.com',
 ];
 const fontSrcUrls = [

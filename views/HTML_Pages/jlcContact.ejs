@@ -1,30 +1,31 @@
 <%- include ('../Basic_content/htmlhead') %>
     <%- include ('../Basic_content/htmlBody') %>
         <div class="contactDetails">
-            <div>
+            <div class="contactForm">
+                <h2>Enter the Details Below:</h2>
 
-                <thead>
-                    <h2 class="myContactDetails">Contact Details</h2>
-                </thead>
-                <table class="tableBorder">
-                    <tbody>
-                        <tr>
-                            <td>Phone No:</td>
-                            <td>+91 9449620444</td>
-                        </tr>
-                        <tr>
-                            <td>Email:</td>
-                            <td>jlcrasta@protonmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Address:</td>
-                            <td>
-                                <address> D'Costa House #2-147 Kuttethur <br> Bajave Post Via Kattipalla <br>
-                                    Mangalore Karnataka India 575030 </address>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <form id="submitQuery">
+
+                    <div>
+                        <label for=" userName">Name</label>
+                        <input type="text" id="userName" placeholder="Enter Name" name="qname">
+                    </div>
+                    <div>
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" placeholder="Enter Email" name="qemail">
+                    </div>
+
+                    <div class="contactMsg">
+                        <label for="userMassage">Your Message</label>
+                        <textarea name="message" id="userMessage" rows="6"
+                            placeholder="Enter your message here!!!"></textarea>
+
+                    </div>
+                    <button>Submit</button>
+
+                    </script>
+                </form>
+
             </div>
             <div>
                 <h2 class="socialDetails">Follow Me</h2>
@@ -35,3 +36,4 @@
             </div>
         </div>
         <%- include ('../Basic_content/htmlTail') %>
+            <script src="Js_Script/contactEmail.js"></script>

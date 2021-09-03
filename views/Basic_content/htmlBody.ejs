@@ -16,7 +16,13 @@
     </div>
 
     <div class="maincontent">
-        <div class="sideBar fontFamily">
+        <div class="hambergerBtn">
+            <hr>
+            <hr>
+            <hr>
+
+        </div>
+        <nav class="hamberger">
             <a href="/">
                 <p>Home</p>
             </a>
@@ -32,4 +38,32 @@
             <a href="/contact">
                 <p>Contact</p>
             </a>
-        </div>
+        </nav>
+        <nav class="mainBar">
+
+            <a href="/">
+                <p>Home</p>
+            </a>
+            <a href="/skills">
+                <p>Skills</p>
+            </a>
+            <a href="/about">
+                <p>About</p>
+            </a>
+            <a href="/project">
+                <p>Project</p>
+            </a>
+            <a href="/contact">
+                <p>Contact</p>
+            </a>
+
+        </nav>
+
+        <script>
+            const hambergerBtn = document.getElementsByClassName('hambergerBtn')[0];
+            const hambar = document.getElementsByClassName('hamberger')[0];
+
+            hambergerBtn.addEventListener('click', () => {
+                hambar.classList.toggle('active')
+            })
+        </script>

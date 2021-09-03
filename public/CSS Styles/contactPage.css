@@ -1,7 +1,7 @@
 
    .fa {
        padding: 0.5em;
-       width: 3rem;
+       width: 5rem;
        text-align: center;
        text-decoration: none;
        border-radius: 10%;
@@ -41,15 +41,51 @@
    align-items: center;
  }
 
- .myContactDetails,.socialDetails{
+.socialDetails{
+  margin-top: 1.2em;
 font-size: 3rem;
 padding: 0.5em 1em;
  }
- .tableBorder{
-   line-height: 2;
-   text-align: left;
- }
+ 
 
-.tableBorder>tbody>tr>td{
-  padding: 0.5em 1em;
+.contactForm{
+  background-color: #58b0f8a8;
+  border-radius: 20px;
+  padding: 1em 1em;
+}
+.contactForm>h2{
+  font-weight: 700;
+  padding: 1em 2em;
+  font-size: 3rem;
+}
+.contactForm>form{
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.contactMsg{
+  display: flex;
+  flex-direction: column;
+}
+.contactMsg>label{
+margin-bottom: 1em;
+}
+.contactMsg>textarea{
+  width: 70%;
+  margin: 0 auto;
+padding: 1em 1em;
+font-size: 1.7rem;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+border-radius: 10px;
+}
+
+.contactForm>form>button{
+  font-size: 2rem;
+  margin: 0 auto;
+  border: none;
+  padding: 0.5em 1.5em;
+}
+.contactForm>form>button:hover{
+  background-color: yellow;
+  transition: 1000ms;
 }

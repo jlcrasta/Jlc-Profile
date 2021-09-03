@@ -8,8 +8,8 @@
     line-height: 2;
 }
 .calcBody>form>button{
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 .calcBody>form>button:hover{
     transition: 500ms;

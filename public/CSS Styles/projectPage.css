@@ -8,26 +8,26 @@
 .projectContent{
     font-size: 2rem;
     border-radius: 20px;
-    background-color: dodgerblue;
+    background-color: rgba(30, 143, 255, 0.616);
     width: 60%;
     min-height: 70vmin;
     padding: 1em 1em;
   text-align: center;
   margin:0 auto;
-  box-shadow: 5px 5px 5px rgba(37, 37, 243, 0.76);
+  box-shadow: 5px 5px 5px rgba(37, 37, 243, 0.562);
 }
 
 .projectBar{
     border-radius: 20px;
     font-size: 2rem;
     padding: 1em 1em;
-    background-color: rgb(44, 147, 250);
+    background-color: rgba(103, 176, 248, 0.644);
     max-width: 15%;
     height: 30vmin;
     align-items: center;
     line-height: 1.5;
     text-align: center;
-    box-shadow: 5px 5px 5px rgb(49, 205, 253);
+    box-shadow: 5px 5px 5px rgba(49, 205, 253, 0.671);
     position: sticky;
     top:6.5em;
 }

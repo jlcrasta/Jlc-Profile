@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const router = express.Router();
 const User = require('../../DB_Models/userModel')
@@ -13,24 +11,27 @@ const handleCastError = require('./utilities/handleCastError')
 const createOneSchema = require('./utilities/createOneSchema')
 const listSchema = require('./utilities/listSchema')
 const session = require('express-session')
-const mongodbsession = require('connect-mongodb-session')(session);
 const flash = require('connect-flash')
 const bcrypt = require('bcrypt')
-//const DbUrl = process.env.DB_URL;
+
+const mongoURI = process.env.DBURL || 'mongodb://localhost:27017/resume_TodoList';
+const secret = process.env.SECRET || 'b1nTQIF8qt';
 
 router.use(flash())
 router.use(methodover('_method'))
-router.use(cookieParser())
+router.use(cookieParser(secret))
 router.use(express.urlencoded({ extended: true }))
 
 const validateCreateOne = (req, res, next) => {
     const { error } = createOneSchema.validate(req.body);
     if (error) {
         const mes = error.details.map(el => el.message).join(',')
+
         if (process.env.NODE_ENV !== "production") {
             throw new todoListError(mes, 400)
         } else {
             req.flash('error', mes)
+            res.redirect('createOne')
         }
     }
     else {
@@ -47,6 +48,7 @@ const validateList = (req, res, next) => {
         }
         else {
             req.flash('error', mes)
+            res.redirect('/project/todoList/allToDoList')
         }
     }
     else {
@@ -54,10 +56,8 @@ const validateList = (req, res, next) => {
     }
 }
 
-const mongoURI = process.env.DBURL || 'mongodb://localhost:27017/resume_TodoList';
-const secret = process.env.SECRET || 'confidential';
 
-//console.log(process.env.DB_URL)
+
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -72,21 +72,11 @@ mongoose.connect(mongoURI, {
         console.log('ERROR occured here it is', e)
     })
 
-const sessionStore = new mongodbsession({//here session variable is created to store in DB
-    url: mongoURI,
-    touchAfter: 24 * 60 * 60,
-    collection: 'sessions'
-})
-
-sessionStore.on("error", function (e) {
-    console.log("session error occured", e)
-})
 
 router.use(session({//here session is created and made available in every route
     secret: secret,
     resave: false,
     saveUninitialized: false,
-    store: sessionStore
 }))
 
 router.use((req, res, next) => {
@@ -94,6 +84,7 @@ router.use((req, res, next) => {
     res.locals.error = req.flash('error')
     next()
 })
+
 
 const isAuth = (req, res, next) => {
     if (req.session.isAuth) {
@@ -150,7 +141,7 @@ router.post('/getOne', asyncError(async (req, res) => {//new user is logged in
     const isUser = await bcrypt.compare(password, user.password);
     if (isUser == true) {
         req.session.isAuth = true;
-        res.cookie('user', username, { expires: new Date(Date.now() + 500000) })
+        res.cookie('user', username, { expires: new Date(Date.now() + 900000), signed: true })
         res.redirect('/project/todoList/allToDoList')
     }
     else {
@@ -160,19 +151,19 @@ router.post('/getOne', asyncError(async (req, res) => {//new user is logged in
 }))
 
 router.get('/allToDoList', isAuth, asyncError(async (req, res) => {
-    const username = req.cookies.user;
+    const username = req.signedCookies.user;
     const user = await User.findOne({ username: username })
     const lists = await List.find({ user: user._id })
     res.render('./HTML_Pages/projectPages/todoList/allToDoList.ejs', { lists, username, message: req.flash('deletedMsg') })
 }))
 
 router.get('/addList', isAuth, asyncError(async (req, res) => {//here the user list page is loaded
-    const username = req.cookies.user;
+    const username = req.signedCookies.user;
     res.render('./HTML_Pages/projectPages/todoList/addToDoList.ejs', { username })
 }))
 router.post('/addList', validateList, isAuth, asyncError(async (req, res) => {//here agenda is saved
     const { agenda } = req.body
-    const username = req.cookies.user;
+    const username = req.signedCookies.user;
     const user = await User.findOne({ username })
     const newList = new List({ list: agenda, user: user._id })
     newList.save();
@@ -181,7 +172,7 @@ router.post('/addList', validateList, isAuth, asyncError(async (req, res) => {//
 
 router.get('/editToDoList/:id', isAuth, asyncError(async (req, res) => {
     const { id } = req.params
-    const username = req.cookies.user;
+    const username = req.signedCookies.user;
     const findComment = await List.findOne({ _id: id })
     const list = findComment.list
     res.render('./HTML_Pages/projectPages/todoList/editToDoList.ejs', { username, list, id })
@@ -263,7 +254,7 @@ router.use((err, req, res, next) => {//here cast error is checked if any
         if (process.env.NODE_ENV !== "production") {
             return res.render('./HTML_Pages/projectPages/todoList/errorPage.ejs')
         } else
-            err = handleCastError(err) //for development must be changed
+            err = handleCastError(err)
     next(err);
 })
 
