@@ -250,12 +250,27 @@ router.delete('/deleteAccount', asyncError(async (req, res) => {//here Account w
 }))
 
 router.use((err, req, res, next) => {//here cast error is checked if any
-    if (err.name === 'CastError')
+if(err){
+    if (process.env.NODE_ENV !== "production") {
+        //req.flash('error', "Error had Occured !!! Please check the credentials or url")
+        res.render('./HTML_Pages/projectPages/todoList/errorPage.ejs')
+    } else
+    {
+        if (err.name === 'CastError'){
+            err = handleCastError(err)
+        }
+        else
+        next(err);
+    }
+}
+
+
+   /* if (err.name === 'CastError')
         if (process.env.NODE_ENV !== "production") {
             return res.render('./HTML_Pages/projectPages/todoList/errorPage.ejs')
         } else
             err = handleCastError(err)
-    next(err);
+    next(err);*/
 })
 
 router.use((req, res) => {
