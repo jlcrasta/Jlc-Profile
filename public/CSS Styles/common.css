@@ -44,11 +44,7 @@ font-size: 4.5rem;
 margin-left: 2em;
 }
 
-@media (max-width:490px) {
-    .nameLogo{
-        margin-left: 1em;
-    }
-}
+
 .dateLine{
     font-size:1.5rem ;
     font-family: sans-serif;
@@ -163,4 +159,14 @@ input,select{
     border-radius: 5px;
     border: 1px solid black;
     padding:0.2em 0.4em;
+}
+@media (max-width:300px) {
+    .nameLogo{
+    font-size: 3rem;
+}}
+
+@media (max-width:490px) {
+    .nameLogo{
+        margin-left: 1em;
+    }
 }

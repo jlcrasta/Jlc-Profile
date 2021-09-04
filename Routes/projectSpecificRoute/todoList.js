@@ -250,34 +250,25 @@ router.delete('/deleteAccount', asyncError(async (req, res) => {//here Account w
 }))
 
 router.use((err, req, res, next) => {//here cast error is checked if any
-        if (process.env.NODE_ENV !== "production") {
-            if (err.name === 'CastError') {
-                err = handleCastError(err)
-            }
-            else
-                next(err);
-            //req.flash('error', "Error had Occured !!! Please check the credentials or url")
-
-        } else {
-            return res.render('./HTML_Pages/projectPages/todoList/errorPage.ejs')
+    if (process.env.NODE_ENV !== "production") {
+        if (err.name === 'CastError') {//below code of production has some error
+            err = handleCastError(err)
         }
+        else
+            next(err);
 
-
-    /* if (err.name === 'CastError')
-         if (process.env.NODE_ENV !== "production") {
-             return res.render('./HTML_Pages/projectPages/todoList/errorPage.ejs')
-         } else
-             err = handleCastError(err)
-     next(err);*/
+    } else {
+        return res.render('./HTML_Pages/projectPages/todoList/errorPage.ejs')
+    }
 })
 
 router.use((req, res) => {
     if (process.env.NODE_ENV !== "production") {
         res.status(404).send('no such url!!')
-    }//use of return is must else node will throw an error
+    }
     else
         return res.render('./HTML_Pages/projectPages/todoList/errorPage.ejs')
-
+    //use of return is must else node will throw an error
 })
 
 module.exports = router

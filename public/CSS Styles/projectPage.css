@@ -22,7 +22,7 @@
     font-size: 2rem;
     padding: 1em 1em;
     background-color: rgba(103, 176, 248, 0.644);
-    max-width: 15%;
+    max-width: 20%;
     height: 30vmin;
     align-items: center;
     line-height: 1.5;
@@ -39,12 +39,14 @@
 }
 
 @media (max-width:890px) {
+
+
     .projectPage{
         flex-direction: column-reverse;
        
     }
     .projectContent{
-        width:80%
+        width:100%
     }
     .projectBar{
         max-width: 70%;

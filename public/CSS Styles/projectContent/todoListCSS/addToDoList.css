@@ -3,13 +3,14 @@
     line-height: 2;
 }
 .addtodoListContent>form>div>textarea{
-    max-width: 60%;
+    max-width: 100%;
+    background-color: rgba(252, 252, 252, 0.822);
     border-radius: 20px;
     padding: 1em 1em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2rem;
 }
-.addtodoListContent>form>div>button:hover{
+.addtodoListContent>form>div>button:hover ,.update:hover{
     background-color: rgb(252, 235, 0);
     transition: 600ms;
 }

@@ -7,4 +7,11 @@
 }
 .cryptoTable{
     margin-top: 1em;
+    font-size: 1.5rem;
+}
+
+@media (max-width:334px) {
+    .cryptoTable{
+        font-size: 1.2rem;
+    }
 }

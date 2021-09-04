@@ -4,7 +4,7 @@
     <div class="projectPage">
         <%- include ('../../../Basic_content/projectBar') %>
         <div class="projectContent">
-            <h2>Edit Agenda for <%= username %>
+            <h2 style="font-weight: bold;">Edit Agenda for <%= username %>
             </h2>
 
             <div class="addtodoListContent">
@@ -16,7 +16,7 @@
                         <textarea name="editedList" id="agenda" cols="30" rows="10"><%= list %></textarea>
 
                     </div>
-                    <button class="addListBtn">Update List</button>
+                    <button class="addListBtn update">Update List</button>
                 </form>
 
                 <form action="/project/todoList/logout" method="post" class="editLogoutBtn">
