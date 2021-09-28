@@ -5,7 +5,7 @@ img{
 
 .imge{
     width: 20rem;
-    border-radius: 50%;
+    border-radius:49.5%;
 }
 .imge:hover{
     cursor: pointer;
