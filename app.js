@@ -15,7 +15,7 @@ const mongoSanitize = require('express-mongo-sanitize')//this is used to get sec
 const helmet = require('helmet')//here another layer is added for security
 app.use(helmet());
 
-const scriptSrcUrls = [
+const scriptSrcUrls = [//these codes needs to be checked
     'https://smtpjs.com/v3/smtp.js',
     'https://api.cryptonator.com/api/ticker/eth-usd',
     'https://api.cryptonator.com/api/ticker/btc-usd',
